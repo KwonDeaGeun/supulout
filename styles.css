@@ -246,7 +246,13 @@ footer {
     pointer-events: none;
     position: relative;
     text-align: center;
-    /* 이미지와 텍스트가 중앙 정렬되도록 설정 */
+}
+
+.tooltip.active {
+    opacity: 1;
+    visibility: visible;
+    max-height: 600px;
+    pointer-events: all;
 }
 
 .tooltip-image {

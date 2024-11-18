@@ -3,23 +3,23 @@ document.getElementById("home-link").addEventListener("click", function (event) 
     window.location.href = "index.html";
 });
 
-let btn_leaf= document.querySelector(".btn_leaf");
-btn_leaf.onclick = function(){
+let btn_leaf = document.querySelector(".btn_leaf");
+btn_leaf.onclick = function () {
     window.location.href = "leaf.html";
 };
 
 let btn_root = document.querySelector(".btn_root");
-btn_root.onclick = function(){
+btn_root.onclick = function () {
     window.location.href = "grrr.html";
 };
 
 let btn_flower = document.querySelector(".btn_flower");
-btn_flower.onclick = function(){
+btn_flower.onclick = function () {
     window.location.href = "flower.html";
 };
 
 let btn_herb = document.querySelector(".btn_herb");
-btn_herb.onclick = function(){
+btn_herb.onclick = function () {
     window.location.href = "herb.html";
 };
 function scrollToTop() {
@@ -36,5 +36,31 @@ window.addEventListener("scroll", () => {
         scrollTopButton.classList.add("show");
     } else {
         scrollTopButton.classList.remove("show");
+    }
+});
+
+document.querySelectorAll('.cent').forEach(function (cent) {
+    const tooltip = cent.querySelector('.tooltip');
+
+    function toggleTooltip() {
+        if (tooltip) {
+            tooltip.classList.toggle('active');
+        }
+    }
+
+    if (window.innerWidth <= 768) {
+        cent.addEventListener('click', toggleTooltip);
+    } else {
+        cent.addEventListener('mouseenter', function () {
+            if (tooltip) {
+                tooltip.classList.add('active');
+            }
+        });
+
+        cent.addEventListener('mouseleave', function () {
+            if (tooltip) {
+                tooltip.classList.remove('active');
+            }
+        });
     }
 });
